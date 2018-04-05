@@ -70,8 +70,8 @@ if(isset($_GET["action"]))
    <br />
    <div class="container" style="width:700px;">
        <h3 align="center">Hairspray</h3><br />
-        <?php include 'header.php'?>
-       <?php  
+        <?php include '/sections/header.php'?>
+        <?php  
                $query = "SELECT * FROM tbl_product ORDER BY id ASC";  
                $result = mysqli_query($connect, $query);  
                if(mysqli_num_rows($result) > 0)  
