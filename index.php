@@ -123,11 +123,11 @@ if(isset($_GET["action"]))
                <td>
                    <?php echo $values["item_quantity"]; ?>
                </td>
-               <td>$
+               <td>Kr
                    <?php echo $values["item_price"]; ?>
                </td>
                <td>Kr
-                   <?php echo number_format($values["item_quantity"] * $values["item_price"], 1); ?>
+                   <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?>
                </td>
                <td><a href="index.php?action=delete&id=<?php echo $values[" item_id "]; ?>"><span class="text-danger">Remove</span></a></td>
            </tr>
