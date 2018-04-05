@@ -77,8 +77,21 @@ if(isset($_GET["action"]))
 
      <body>  
           <br />  
+
+          <form action="nyhetsbrev.php" method="post">
+
+            Name : <input type="text" name="username">
+                    <br/>
+            Email : <input type="text" name="email">
+                    <br/>
+                    <input type="submit" value="Insert">
+         </form>
+
+
+
           <div class="container" style="width:700px;">  
                <h3 align="center">hairSpray</h3><br />  
+
                <?php  
                $query = "SELECT * FROM tbl_product ORDER BY id ASC";  
                $result = mysqli_query($connect, $query);  
