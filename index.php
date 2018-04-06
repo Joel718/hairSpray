@@ -184,8 +184,9 @@ if(isset($_GET["action"]))
                            
                              echo "<tr>";
                              echo "<td>" .$row["type"]."</td>";
-                             echo '<input type="radio" name="shipping" value="Express">'; 
-                             echo '<input type="radio" name="shipping" value="Standard">';
+                             echo '<td><input type="radio" name="shipping" value="Express"></td>'; 
+                             echo '<td><input type="radio" name="shipping" value="Standard"></td>';
+                             echo '</tr>';
                         
                             }
 
