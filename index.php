@@ -152,12 +152,6 @@ if(isset($_GET["action"]))
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
                               <td></td>  
                          </tr>  
-
-
-                     
-                                <input type="radio" name="gender" value="male"> <br>
-                                <input type="radio" name="gender" value="female"> Female<br>
-                                <input type="radio" name="gender" value="other"> Other
                        
 
                         <?php 
@@ -168,16 +162,17 @@ if(isset($_GET["action"]))
                             echo "<tr><td>Table name</td><td>Fields name</td></tr>";
                             while($row = mysqli_fetch_array($result_tables)) {
                             
+                             echo $row["type"];
                             }
 
                         ?>
 
-                        <input type="radio" name="shipping" value="<?php echo $row["type"]; ?>" /> 
+                     
 
-    <?php  
-    }  
-    ?>  
-                         
+                            <?php  
+                            }  
+                            ?>  
+                                                
                     </table>  
                </div>  
           </div>  
