@@ -25,7 +25,7 @@
         <div class="container-sm">
             <button type="button" class="btn btn-default">Inlogg</button>  
             <button type="button" class="btn btn-default">Skapa Konto</button>
-            <button type="button" class="btn btn-default kundvagn"><img src="/hairSpray/bilder/shopping_kart.png"></button>
+            <button type="button" class="btn btn-default kundvagn"><img src="../hairSpray/bilder/shopping_kart.png"></button>
             <!-- <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="username">
             <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password"> -->
         </div>
