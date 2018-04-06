@@ -1,6 +1,6 @@
 <?php
 session_start();
-   $dbsettings = parse_ini_file('./database.ini');
+   $dbsettings = parse_ini_file('../database.ini');
    $servername = $dbsettings['address'];
    $username = $dbsettings['username'];
    $password = $dbsettings['password'];
@@ -11,20 +11,22 @@ $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
    die("FEL: " . $connect->connect_error);
 }
-if(isset($_POST['user'])){
-$uname=$_POST['user'];
-$password=$_POST['pass'];
-$sql="select * from Admin where user='".$uname."'AND pass='".$password."'
-limit 1";
+
+if(isset($_POST['username'])){
+    $uname=$_POST['username'];
+    $password=$_POST['password'];
+    $sql="select * from Admin where username='".$uname."'AND password='".$password."'
+    limit 1";
+
 $result=mysql_query($sql);
-if(mysql_num_rows($result)==1){
-    echo " Du har lyckats logga in";
-    exit();
-}
-else{
-    echo "Du har skrivit in fel lösenord";
-    exit();
-}
+    if(mysql_num_rows($result)==1){
+        echo " Du har lyckats logga in";
+        exit();
+        
+        }else{
+            echo "Du har skrivit in fel lösenord";
+            exit();
+        }
 }
 
 
@@ -39,10 +41,10 @@ else{
 </head>
 <body>
 <div id="inlogg">
-<form method="POST" action="#">
- <input type="text" name="user" placeholder="Namn">
- <input type="password" name="pass" placeholder="Lösenord">
-<input type="submit" name="submit" value="Logga in">
+<form method="POST" action="admin.php">
+    <input type="text" name="user" placeholder="Namn">
+    <input type="password" name="pass" placeholder="Lösenord">
+    <input type="submit" name="submit" value="Logga in">
 </form>
 </div>
     
