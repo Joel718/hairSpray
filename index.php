@@ -96,16 +96,6 @@ if(isset($_GET["action"]))
     <br />
 
 
-    <div id="prenumeration">
-        <form action="nyhetsbrev.php" method="post">
-            echo "
-            <h4>Registrera dig för nyhetsbrev</h4>"; Email : <input type="text" name="email">
-            <br/>
-            <input type="submit" value="Insert">
-        </form>
-    </div>
-
-
     <div class="container" style="width:700px;">
         <h3 align="center">hairSpray</h3><br />
 
@@ -206,16 +196,6 @@ if(isset($_GET["action"]))
                 <?php  
                             }  
                             ?>
-
-            </table>
-        </div>
-    </div>
-    <br />
-
-</body>
-
-</html>
-                            ?>  
                                                 
                     </table>  
                </div>  
