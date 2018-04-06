@@ -12,17 +12,16 @@ if ($connect->connect_error) {
 die("FEL: " . $connect->connect_error);
 } 
 
-$Name = $_POST['username'];
 $Email = $_POST['email'];
 
-$sql = "INSERT INTO Person (Name,Email) VALUES ('$Name', '$Email')";
+$sql = "INSERT INTO Person (Name,Email) VALUES ('$Email')";
 
     if(!mysqli_query($connect, $sql))
     {
-        echo 'not inserted';
+        echo 'Inget satt';
     }
     else {
-        echo 'Inserted';
+        echo 'Du prenumererar nu för nyhetsbrevet';
     }
 
 ?>

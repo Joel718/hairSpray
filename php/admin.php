@@ -30,6 +30,8 @@ $result=mysql_query($sql);
 }
 
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,12 +43,29 @@ $result=mysql_query($sql);
 </head>
 <body>
 <div id="inlogg">
+<?php
+if(!isset($_session['user']))
+{
+?>
 <form method="POST" action="admin.php">
     <input type="text" name="user" placeholder="Namn">
     <input type="password" name="pass" placeholder="Lösenord">
     <input type="submit" name="submit" value="Logga in">
 </form>
 </div>
+
+<?php 
+$query = "SELECT * FROM Person";
+$select_Person = mysqli_query($connect,$query);
+
+while($row = mysqli_fetch_assoc($select_Person )) {
+   echo $post_ID = $row['ID'];
+   echo $post_Name = $row['Name'];
+    echo $post_Email = $row['Email'];
+
+}
+?>
+
     
 </body>
 </html>

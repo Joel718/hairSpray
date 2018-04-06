@@ -41,6 +41,7 @@ if(isset($_POST["add_to_cart"]))
                'item_name'               =>     $_POST["hidden_name"],  
                'item_price'          =>     $_POST["hidden_price"],  
                'item_quantity'          =>     $_POST["quantity"]  
+                        
           );  
           $_SESSION["shopping_cart"][0] = $item_array;  
      }  
@@ -81,15 +82,15 @@ if(isset($_GET["action"]))
      <body>  
           <br />  
 
-          <form action="nyhetsbrev.php" method="post">
 
-            Name : <input type="text" name="username">
-                    <br/>
-            Email : <input type="text" name="email">
-                    <br/>
-                    <input type="submit" value="Insert">
-         </form>
-
+        <div id="prenumeration">
+            <form action="nyhetsbrev.php" method="post">
+                    echo "<h4>Registrera dig för nyhetsbrev</h4>";
+                Email : <input type="text" name="email">
+                        <br/>
+                        <input type="submit" value="Insert">
+            </form>
+        </div>
 
 
           <div class="container" style="width:700px;">  
@@ -155,13 +156,33 @@ if(isset($_GET["action"]))
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
                               <td></td>  
                          </tr>  
-                         <?php  
-                         }  
-                         ?>  
+                       
+
+                        <?php 
+
+                            $sql = "SELECT * FROM Orders";
+                            $result_tables = mysqli_query($connect, $sql);
+                        
+                            while($row = mysqli_fetch_array($result_tables)) {
+                           
+                             echo "<tr>";
+                             echo "<td>" .$row["type"]."</td>";
+                        
+                            }
+
+                        ?>
+
+                     
+
+                            <?php  
+                            }  
+                            ?>  
+                                                
                     </table>  
                </div>  
           </div>  
           <br />  
+        
      </body>  
 </html>
 
