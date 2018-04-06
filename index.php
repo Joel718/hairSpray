@@ -80,13 +80,14 @@ if(isset($_GET["action"]))
           <br />  
 
 
-          <form action="nyhetsbrev.php" method="post">
-                echo "<h4>Registrera dig för nyhetsbrev</h4>";
-            Email : <input type="text" name="email">
-                    <br/>
-                    <input type="submit" value="Insert">
-         </form>
-
+        <div id="prenumeration">
+            <form action="nyhetsbrev.php" method="post">
+                    echo "<h4>Registrera dig för nyhetsbrev</h4>";
+                Email : <input type="text" name="email">
+                        <br/>
+                        <input type="submit" value="Insert">
+            </form>
+        </div>
 
 
           <div class="container" style="width:700px;">  
@@ -158,11 +159,12 @@ if(isset($_GET["action"]))
 
                             $sql = "SELECT * FROM Orders";
                             $result_tables = mysqli_query($connect, $sql);
-                            echo "<table border=1>";
-                            echo "<tr><td>Table name</td><td>Fields name</td></tr>";
+                        
                             while($row = mysqli_fetch_array($result_tables)) {
-                            
-                             echo $row["type"];
+                           
+                             echo "<tr>";
+                             echo "<td>" .$row["type"]."</td>";
+                        
                             }
 
                         ?>
