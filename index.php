@@ -41,6 +41,7 @@ if(isset($_POST["add_to_cart"]))
                'item_name'               =>     $_POST["hidden_name"],  
                'item_price'          =>     $_POST["hidden_price"],  
                'item_quantity'          =>     $_POST["quantity"]  
+                        
           );  
           $_SESSION["shopping_cart"][0] = $item_array;  
      }  
@@ -78,10 +79,9 @@ if(isset($_GET["action"]))
      <body>  
           <br />  
 
-          <form action="nyhetsbrev.php" method="post">
 
-            Name : <input type="text" name="username">
-                    <br/>
+          <form action="nyhetsbrev.php" method="post">
+                echo "<h4>Registrera dig för nyhetsbrev</h4>";
             Email : <input type="text" name="email">
                     <br/>
                     <input type="submit" value="Insert">
@@ -152,12 +152,36 @@ if(isset($_GET["action"]))
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
                               <td></td>  
                          </tr>  
-                         <?php  
-                         }  
-                         ?>  
+
+
+                     
+                                <input type="radio" name="gender" value="male"> <br>
+                                <input type="radio" name="gender" value="female"> Female<br>
+                                <input type="radio" name="gender" value="other"> Other
+                       
+
+                        <?php 
+
+                            $sql = "SELECT * FROM Orders";
+                            $result_tables = mysqli_query($connect, $sql);
+                            echo "<table border=1>";
+                            echo "<tr><td>Table name</td><td>Fields name</td></tr>";
+                            while($row = mysqli_fetch_array($result_tables)) {
+                            
+                            }
+
+                        ?>
+
+                        <input type="radio" name="shipping" value="<?php echo $row["type"]; ?>" /> 
+
+    <?php  
+    }  
+    ?>  
+                         
                     </table>  
                </div>  
           </div>  
           <br />  
+        
      </body>  
 </html>
