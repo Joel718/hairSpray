@@ -63,19 +63,34 @@ if(isset($_GET["action"]))
 }  
 
 
-?>
+?>  
 
-<!DOCTYPE html>
-<html>
+<?php include './sections/header.php';?>
 
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-</head>
+
+<!DOCTYPE html>  
+<html>  
+     <head>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     </head>  
+
+     <body>  
+          <br />  
+
+
+        <div id="prenumeration">
+            <form action="nyhetsbrev.php" method="post">
+                    echo "<h4>Registrera dig för nyhetsbrev</h4>";
+                Email : <input type="text" name="email">
+                        <br/>
+                        <input type="submit" value="Insert">
+            </form>
+        </div>
 
 <body>
     <br />
@@ -200,3 +215,17 @@ if(isset($_GET["action"]))
 </body>
 
 </html>
+                            ?>  
+                                                
+                    </table>  
+               </div>  
+          </div>  
+          <br />  
+        
+     </body>  
+</html>
+
+<?php include './sections/footer.php';?>
+<style>
+<?php include './sections/head_foot.css'; ?>
+</style>
