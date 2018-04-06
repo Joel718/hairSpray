@@ -21,32 +21,24 @@
 
 
     <nav class="navbar sticky-top navbar1">
-        <div class="container-sm-2">
+    <a class="navbar-brand" href="#">Hair Spray</a>
+        <div class="container-sm">
             <button type="button" class="btn btn-default">Inlogg</button>  
             <button type="button" class="btn btn-default">Skapa Konto</button>
-            <button type="button" class="btn btn-default kundvagn"><img src="http://localhost/hairSpray/hairSpray/bilder/shopping_kart.png"></button>
+            <button type="button" class="btn btn-default kundvagn"><img src="/hairSpray/bilder/shopping_kart.png"></button>
             <!-- <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="username">
             <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password"> -->
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-sm row sticky-top navbar2">
-          <ul class="navbar-nav col-sm col-xs linkproducts">
-            <li class="nav-item col-sm-4">
-              <a class="nav-link text-white" href="#">Shampoo</a>
-            </li>
-            <li class="nav-item col-sm-4">
-              <a class="nav-link text-white" href="#">Hårspray</a>
-            </li>
-            <li class="nav-item col-sm-4">
-              <a class="nav-link text-white" href="#">Vax</a>
-            </li>
-          </ul>
+    <nav class="navbar linkproducts nav-justified navbar2">
+      <a class="nav-item nav-link" href="#">Shampoo</a>
+      <a class="nav-item nav-link" href="#">Hårspray</a>
+      <a class="nav-item nav-link" href="#">Vax</a>
     </nav>
 
+
 <!-- Navbars -->
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -57,4 +49,3 @@
 </html>
 
 
-<?php include 'footer.php';?>

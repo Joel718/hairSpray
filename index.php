@@ -64,6 +64,9 @@ if(isset($_GET["action"]))
 
 ?>  
 
+<?php include './sections/header.php';?>
+
+
 <!DOCTYPE html>  
 <html>  
      <head>  
@@ -161,3 +164,8 @@ if(isset($_GET["action"]))
           <br />  
      </body>  
 </html>
+
+<?php include './sections/footer.php';?>
+<style>
+<?php include './sections/head_foot.css'; ?>
+</style>
