@@ -20,6 +20,7 @@
     background-color: #c396bd;
     font-family: 'Jua', sans-serif;
     text-align: center;
+    border-radius: 0px;
 }
 
 #myFooter .row {
@@ -114,9 +115,10 @@
 
 .linkproducts a {
     border-right: 2px solid white;
+
 }
 
-.linkproducts li:last-child a {
+.linkproducts a:last-child {
     border-right: none;
 }
 
