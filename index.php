@@ -1,8 +1,5 @@
 
 <?php   
-
-
-
 session_start();
     $dbsettings = parse_ini_file('./database.ini');
     $servername = $dbsettings['address'];
@@ -20,6 +17,7 @@ if(isset($_POST["add_to_cart"]))
 {  
      if(isset($_SESSION["shopping_cart"]))  
      {  
+        $sql = "UPDATE tbl_product SET antal = antal-1 WHERE id = 1";
           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
           if(!in_array($_GET["id"], $item_array_id))  
           {  
@@ -34,7 +32,7 @@ if(isset($_POST["add_to_cart"]))
           }  
           else  
           {  
-               echo '<script>alert("Item Already Added")</script>';  
+               echo '<script>alert("Finns redan produkt")</script>';  
                echo '<script>window.location="index.php"</script>';  
           }  
      }  
@@ -85,10 +83,10 @@ if(isset($_GET["action"]))
 
         <div id="prenumeration">
             <form action="nyhetsbrev.php" method="post">
-                    echo "<h4>Registrera dig för nyhetsbrev</h4>";
+                     <h4>Registrera dig för nyhetsbrev</h4>
                 Email : <input type="text" name="email">
                         <br/>
-                        <input type="submit" value="Insert">
+                        <input type="submit" value="Registrera">
             </form>
         </div>
 
@@ -112,7 +110,7 @@ if(isset($_GET["action"]))
                           <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">   
                                <h4 class="text-info"><?php echo $row["name"]; ?></h4>  
                                <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
-                               <input type="text" name="quantity" class="form-control" value="1" />  
+                               <input type="hidden" name="quantity" class="form-control" value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
                                <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />  
@@ -158,25 +156,7 @@ if(isset($_GET["action"]))
                               <td colspan="3" align="right">Total</td>  
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
                               <td></td>  
-                         </tr>  
-
-
-                <?php 
-
-                            $sql = "SELECT * FROM Orders";
-                            $result_tables = mysqli_query($connect, $sql);
-                        
-                            while($row = mysqli_fetch_array($result_tables)) {
-                           
-                             echo "<tr>";
-                             echo "<td>" .$row["type"]."</td>";
-                             echo '<td><input type="radio" name="shipping" value="Express"></td>'; 
-                             echo '<td><input type="radio" name="shipping" value="Standard"></td>';
-                             echo '</tr>';
-                        
-                            }
-
-                        ?>
+                         </tr>     
 
                 <?php  
                         }  
