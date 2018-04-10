@@ -1,4 +1,5 @@
 <?php
+//Hämtar databas
 session_start();
    $dbsettings = parse_ini_file('../database.ini');
    $servername = $dbsettings['address'];
@@ -11,13 +12,16 @@ $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
    die("FEL: " . $connect->connect_error);
 }
-
+//Om inlogg stämmer loggar in
 if(isset($_POST['username'])){
     $uname=$_POST['username'];
     $password=$_POST['password'];
     $sql="select * from Admin where username='".$uname."'AND password='".$password."'
     limit 1";
 
+    $username = striplashes($username);
+    $password = striplashes($password);
+    
 $result=mysql_query($sql);
     if(mysql_num_rows($result)==1){
         echo " Du har lyckats logga in";
@@ -28,10 +32,8 @@ $result=mysql_query($sql);
             exit();
         }
 }
-
-
-
-
+ // if(!isset($_session['user']))
+    // {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,18 +45,17 @@ $result=mysql_query($sql);
 </head>
 <body>
 <div id="inlogg">
-<?php
-if(!isset($_session['user']))
-{
-?>
+
+<!--Inlogg formulär-->
 <form method="POST" action="admin.php">
-    <input type="text" name="user" placeholder="Namn">
-    <input type="password" name="pass" placeholder="Lösenord">
+    <input type="text" name="username" placeholder="Namn">
+    <input type="password" name="password" placeholder="Lösenord">
     <input type="submit" name="submit" value="Logga in">
 </form>
 </div>
 
 <?php 
+//Hämtar lista för nyhetsbrev
 $query = "SELECT * FROM Person";
 $select_Person = mysqli_query($connect,$query);
 
