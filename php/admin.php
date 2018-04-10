@@ -1,6 +1,7 @@
 <?php
 //Hämtar databas
 session_start();
+
    $dbsettings = parse_ini_file('../database.ini');
    $servername = $dbsettings['address'];
    $username = $dbsettings['username'];
@@ -12,29 +13,36 @@ $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
    die("FEL: " . $connect->connect_error);
 }
-//Om inlogg stämmer loggar in
+
+
+//inlogg till admin startar HÄR
+mysql_connect($dbsettings,$servername,$user,$password);
+mysql_select_db($dbname);
+
+
+
+//Om inlogg på sida stämmer loggar in
 if(isset($_POST['username'])){
+
     $uname=$_POST['username'];
     $password=$_POST['password'];
+
     $sql="select * from Admin where username='".$uname."'AND password='".$password."'
     limit 1";
 
-    $username = striplashes($username);
-    $password = striplashes($password);
-    
-$result=mysql_query($sql);
+    $result=mysql_query($sql);
+
     if(mysql_num_rows($result)==1){
-        echo " Du har lyckats logga in";
+        echo " Du har lyckats logga in"; 
         exit();
-        
-        }else{
-            echo "Du har skrivit in fel lösenord";
-            exit();
-        }
+    }else{
+        echo "Du har skrivit in fel lösenord";
+        exit();
+    }
 }
- // if(!isset($_session['user']))
-    // {
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +73,7 @@ while($row = mysqli_fetch_assoc($select_Person )) {
     echo $post_Email = $row['Email'];
 
 }
+
 ?>
 
     
