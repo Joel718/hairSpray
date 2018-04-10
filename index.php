@@ -1,5 +1,3 @@
-<?php include './sections/head_foot.css'; ?>
-
 
 <?php   
 
