@@ -15,30 +15,29 @@ if ($connect->connect_error) {
 }
 
 
+
 //inlogg till admin startar HÄR
-mysql_connect($dbsettings,$servername,$user,$password);
-mysql_select_db($dbname);
+// mysql_connect($dbsettings,$servername,$username,$password);
+// mysql_select_db($dbname);
 
 
 
 //Om inlogg på sida stämmer loggar in
-if(isset($_POST['username'])){
-
-    $uname=$_POST['username'];
-    $password=$_POST['password'];
-
-    $sql="select * from Admin where username='".$uname."'AND password='".$password."'
-    limit 1";
-
-    $result=mysql_query($sql);
-
-    if(mysql_num_rows($result)==1){
-        echo " Du har lyckats logga in"; 
-        exit();
+if(isset($_POST['loggIn'])){
+require 'admin_connect.php';
+$username=$_POST['username'];
+$password=$_POST['password'];
+$result=mysqli_query($sql, "select * from Admin where username='".$username."'AND password='".$password.'"');
+if(mysqli_num_rows($result)==1){
+    $_SESSION['username'] = $username;
+    header('Location: welcome_admin.php');
+        //echo " Du har lyckats logga in"; 
     }else{
         echo "Du har skrivit in fel lösenord";
-        exit();
+        
     }
+    if(isset($_GET['logout']))
+    session_unregister('username');
 }
 
 ?>
@@ -58,7 +57,7 @@ if(isset($_POST['username'])){
 <form method="POST" action="admin.php">
     <input type="text" name="username" placeholder="Namn">
     <input type="password" name="password" placeholder="Lösenord">
-    <input type="submit" name="submit" value="Logga in">
+    <input type="submit" name="loggIn" value="Logga in">
 </form>
 </div>
 
