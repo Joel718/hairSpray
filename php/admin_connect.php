@@ -1,6 +1,6 @@
 <?php
 
-$sql = mysqli_connect('localhost', 'root', '', 'hairspray');
+$sql = mysqli_connect('localhost', 'root', '', 'djur');
    
 
 ?>

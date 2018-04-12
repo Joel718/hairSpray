@@ -15,16 +15,23 @@ if ($connect->connect_error) {
 }
 
 
+
+//inlogg till admin startar HÄR
+// mysql_connect($dbsettings,$servername,$username,$password);
+// mysql_select_db($dbname);
+
+
+
 //Om inlogg på sida stämmer loggar in
-if(isset($_POST['submit'])){
+if(isset($_POST['loggIn'])){
 require 'admin_connect.php';
 $username=$_POST['username'];
 $password=$_POST['password'];
-$result=mysqli_connect($sql, 'SELECT * FROM Admin WHERE username="'.$username.'" AND password="'.$password.'"limit 1"');
-if(mysqli_num_rows($result)==NULL){ 
+$result=mysqli_query($sql, "SELECT * FROM Admin WHERE username='".$username."'AND password='".$password.'"');
+if(mysqli_num_rows($result)==1){
     $_SESSION['username'] = $username;
     header('Location: welcome_admin.php');
-        echo " Du har lyckats logga in"; 
+        //echo " Du har lyckats logga in"; 
     }else{
         echo "Du har skrivit in fel lösenord";
         
@@ -50,9 +57,12 @@ if(mysqli_num_rows($result)==NULL){
 <form method="POST" action="admin.php">
     <input type="text" name="username" placeholder="Namn">
     <input type="password" name="password" placeholder="Lösenord">
-    <input type="submit" name="submit" value="Loggain">
+    <input type="submit" name="loggIn" value="Logga in">
 </form>
 </div>
+
+
+
     
 </body>
 </html>
