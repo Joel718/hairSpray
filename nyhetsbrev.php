@@ -14,11 +14,11 @@ die("FEL: " . $connect->connect_error);
 
 $Email = $_POST['email'];
 
-$sql = "INSERT INTO Person (Name,Email) VALUES ('$Email')";
+$sql = "INSERT INTO Person (Email) VALUES ('$Email')";
 
     if(!mysqli_query($connect, $sql))
     {
-        echo 'Inget satt';
+        echo 'Tyvärr, det gick ej.';
     }
     else {
         echo 'Du prenumererar nu för nyhetsbrevet';
