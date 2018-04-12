@@ -1,39 +1,17 @@
 <?php
-//Hämtar databas
-session_start();
-
-   $dbsettings = parse_ini_file('../database.ini');
-   $servername = $dbsettings['address'];
-   $username = $dbsettings['username'];
-   $password = $dbsettings['password'];
-   $dbname = $dbsettings['dbname'];
-// Vi loggar in i databasen
-$connect = new mysqli($servername, $username, $password, $dbname);
-// Testa om det funkar
-if ($connect->connect_error) {
-   die("FEL: " . $connect->connect_error);
-}
-
-
-
-//inlogg till admin startar HÄR
-// mysql_connect($dbsettings,$servername,$username,$password);
-// mysql_select_db($dbname);
-
-
 
 //Om inlogg på sida stämmer loggar in
 if(isset($_POST['loggIn'])){
 require 'admin_connect.php';
-$username=$_POST['username'];
-$password=$_POST['password'];
-$result=mysqli_query($sql, "SELECT * FROM Admin WHERE username='".$username."'AND password='".$password.'"');
+$uname=$_POST['username'];
+$pw=$_POST['password'];
+$result=mysqli_query($connect, "SELECT * FROM Admin WHERE username='$uname' AND password='$pw'");
 if(mysqli_num_rows($result)==1){
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $uname;
     header('Location: welcome_admin.php');
         //echo " Du har lyckats logga in"; 
     }else{
-        echo "Du har skrivit in fel lösenord";
+        echo "Du har skrivit in fel lösenord" .$uname;
         
     }
     if(isset($_GET['logout']))
