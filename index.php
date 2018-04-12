@@ -17,7 +17,7 @@ if(isset($_POST["add_to_cart"]))
 {  
      if(isset($_SESSION["shopping_cart"]))  
      {  
-        $sql = "UPDATE tbl_product SET antal = antal-1 WHERE id = 1";
+        $sql = "UPDATE tbl_product SET Antal = Antal - num_purchased WHERE id = 1";
           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
           if(!in_array($_GET["id"], $item_array_id))  
           {  
