@@ -78,8 +78,18 @@ if(isset($_GET["action"]))
      </head>  
 
      <style>
+    
+    .button {
 
-        
+        background-color: blue;
+    }
+
+    .table-responsive {
+
+        border-width: 10px;
+        border: solid;
+
+    }
 
      </style>
 
@@ -123,7 +133,7 @@ if(isset($_GET["action"]))
                                <input type="hidden" name="quantity" class="form-control" value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["prodname"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
-                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />  
+                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="button" value="Add to Cart" />  
                           </div>  
                      </form>  
                 </div>  
