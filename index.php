@@ -17,7 +17,7 @@ if(isset($_POST["add_to_cart"]))
 {  
      if(isset($_SESSION["shopping_cart"]))  
      {  
-        $sql = "UPDATE tbl_product SET Antal = Antal - num_purchased WHERE id = 1";
+        $sql = "UPDATE tbl_product SET Antal = wAntal - num_purchased WHERE id = 1";
           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
           if(!in_array($_GET["id"], $item_array_id))  
           {  
@@ -77,6 +77,22 @@ if(isset($_GET["action"]))
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
      </head>  
 
+     <style>
+    
+    .button {
+
+        background-color: blue;
+    }
+
+    .table-responsive {
+
+        border-width: 10px;
+        border: solid;
+
+    }
+
+     </style>
+
      <body>  
           <br />  
 
@@ -98,22 +114,26 @@ if(isset($_GET["action"]))
         <h3 align="center">hairSpray</h3><br />
 
         <?php  
-                $query = "SELECT * FROM tbl_product ORDER BY id ASC";  
+                $query = "SELECT * 
+                FROM tbl_product 
+                WHERE prodname 
+                LIKE 'h%' 
+                ORDER BY id ASC";    
                 $result = mysqli_query($connect, $query);  
                 if(mysqli_num_rows($result) > 0)  
                 {  
                      while($row = mysqli_fetch_array($result))  
                      {  
-                ?>  
+            ?>  
                 <div class="col-md-4">  
                      <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">  
                           <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">   
-                               <h4 class="text-info"><?php echo $row["name"]; ?></h4>  
+                               <h4 class="text-info"><?php echo $row["prodname"]; ?></h4>  
                                <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
                                <input type="hidden" name="quantity" class="form-control" value="1" />  
-                               <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />  
+                               <input type="hidden" name="hidden_name" value="<?php echo $row["prodname"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
-                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />  
+                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="button" value="Add to Cart" />  
                           </div>  
                      </form>  
                 </div>  
@@ -158,10 +178,10 @@ if(isset($_GET["action"]))
                               <td></td>  
                          </tr>     
 
-                <?php  
+                        <?php  
                         }  
                         ?>
-                                                
+
                     </table>  
                </div>  
           </div>  
@@ -169,5 +189,3 @@ if(isset($_GET["action"]))
         
      </body>  
 </html>
-
-
