@@ -1,5 +1,5 @@
-
 <?php   
+include 'logincss.css';
 session_start();
     $dbsettings = parse_ini_file('./database.ini');
     $servername = $dbsettings['address'];
