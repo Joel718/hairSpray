@@ -44,9 +44,32 @@ $select_Person = mysqli_query($connect,$query);
 while($row = mysqli_fetch_assoc($select_Person )) {
   echo $post_ID = $row['ID'];
   echo $post_Name = $row['Name'];
-   echo $post_Email = $row['Email'];
+  echo $post_Email = $row['Email'];
+  echo "<br/>";
 
 }
 
+ function subtraktStock($id){
+    "UPDATE tbl_product SET Antal = Antal - 1 WHERE ID = $id";
+};
 ?>
+
+<?php
+
+echo "<br/><br/>";
+$query = "SELECT * FROM tbl_product WHERE Antal";
+$select_stock = mysqli_query($connect, $query);
+
+  while ($row = mysqli_fetch_assoc($select_stock)){
+    echo '<br/>' .$row['Antal'];
+    echo '<button id="btnUp">+</button>';
+    echo '<button id="btnDown">-</button>';
+}
+
+subtraktStock(1);
+
+?>
+
 </html>
+
+

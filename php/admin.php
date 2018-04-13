@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 //Om inlogg på sida stämmer loggar in
 if(isset($_POST['loggIn'])){
 require 'admin_connect.php';
@@ -17,6 +20,8 @@ if(mysqli_num_rows($result)==1){
     if(isset($_GET['logout']))
     session_unregister('username');
 }
+
+
 
 ?>
 
