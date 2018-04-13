@@ -84,13 +84,6 @@ if(isset($_GET["action"]))
         background-color: blue;
     }
 
-    .table-responsive {
-
-        border-width: 10px;
-        border: solid;
-
-    }
-
      </style>
 
      <body>  
@@ -127,7 +120,7 @@ if(isset($_GET["action"]))
             ?>  
                 <div class="col-md-4">  
                      <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">  
-                          <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">   
+                          <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
                                <h4 class="text-info"><?php echo $row["prodname"]; ?></h4>  
                                <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
                                <input type="hidden" name="quantity" class="form-control" value="1" />  
@@ -182,6 +175,35 @@ if(isset($_GET["action"]))
                         }  
                         ?>
 
+                            <?php 
+
+                            $sql = "SELECT * FROM tbl_product WHERE prodname LIKE 'F%'";
+                            $result_tables = mysqli_query($connect, $sql);
+                        
+                            while($row = mysqli_fetch_array($result_tables)) {
+                        
+
+                        ?>
+
+
+                     <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">  
+                            <tr>
+                               <td><?php echo $row["prodname"]; ?></td>  
+                               <td>:- <?php echo $row["price"]; ?></td>  
+                               <input type="hidden" name="quantity" class="form-control" value="1" />  
+                               <input type="hidden" name="hidden_name" value="<?php echo $row["prodname"]; ?>" />  
+                               <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
+                               <td><input type="radio" name="hidden_price" value="Standard"></td>;
+                               <td><input type="submit" name="add_to_cart" style="margin-top:5px;" class="button" value="Add to Cart" /></td> 
+                               </tr>
+                          </div>  
+                     </form>  
+             
+                    <?php 
+
+                    }
+
+                    ?>
                     </table>  
                </div>  
           </div>  
