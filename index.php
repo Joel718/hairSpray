@@ -188,14 +188,13 @@ if(isset($_GET["action"]))
 
                      <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">  
                             <tr>
-                               <td><?php echo $row["prodname"]; ?></td>  
-                               <td>:- <?php echo $row["price"]; ?></td>  
-                               <input type="hidden" name="quantity" class="form-control" value="1" />  
-                               <input type="hidden" name="hidden_name" value="<?php echo $row["prodname"]; ?>" />  
-                               <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
-                               <td><input type="radio" name="hidden_price" value="Standard"></td>;
-                               <td><input type="submit" name="add_to_cart" style="margin-top:5px;" class="button" value="Add to Cart" /></td> 
-                               </tr>
+                            <td><?php echo $row["prodname"]; ?></td> 
+                            <input type="hidden" name="quantity" class="form-control" value="1" />  
+                            <td><?php echo $row["price"]; ?></td> 
+                            <input type="hidden" name="hidden_name" value="<?php echo $row["prodname"]; ?>" />  
+                            <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
+                            <td><input type="submit" name="add_to_cart" style="margin-top:5px;" class="button" value="Add to Cart" /></td> 
+                            </tr>
                           </div>  
                      </form>  
              
