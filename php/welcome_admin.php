@@ -38,27 +38,22 @@ while($row = mysqli_fetch_assoc($select_Person )) {
 <?php
 
 echo "<br/><br/>";
-$query = "SELECT * FROM tbl_product WHERE Antal IS NOT NULL";
+$query = "SELECT * 
+FROM tbl_product
+WHERE prodname
+LIKE 'hair%'
+ORDER BY Antal DESC";
 $select_stock = mysqli_query($connect, $query);
 
 
-while ($row = mysqli_fetch_assoc($select_stock))
-{
-    echo '<br/><form method="POST" action="../functions/updateStock.php">' .$row['Antal'];
-    echo '<input type="submit" name="' . $row['id'] . '" value="+">';
-    echo '<input type="submit" name="' . $row['id'] . '" value="-">';
+while ($row = mysqli_fetch_assoc($select_stock)){
+
+    echo '<br/><form method="POST" action="../functions/updateStock.php">' .$row['Antal'] . "</br>" . $row[ 'prodname' ];
+    echo '<input type="submit" name="operator" value="+">';
+    echo '<input type="submit" name="operator" value="-">';
+    echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
     echo '</form>';
 }
-
-echo '<a href="../functions/updateStock.php"><button id="up">+</button></a>';
-echo '<a href="../functions/updateStock.php"><button id="down">-</button></a>';
-
-
-// while ($row = mysqli_fetch_assoc($select_stock)){
-//   echo '<br/>' .$row['Antal'];
-
-
-
 
 ?>
 
