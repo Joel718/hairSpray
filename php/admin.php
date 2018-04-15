@@ -1,13 +1,9 @@
 <?php
-
-
-
-
 //Om inlogg på sida stämmer loggar in
 if(isset($_POST['loggIn'])){
 require 'admin_connect.php';
-$uname=$_POST['username'];
-$pw=$_POST['password'];
+$uname =$_POST['username'];
+$pw=md5($_POST['password']);
 $result=mysqli_query($connect, "SELECT * FROM Admin WHERE username='$uname' AND password='$pw'");
 if(mysqli_num_rows($result)==1){
     $_SESSION['username'] = $uname;

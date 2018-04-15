@@ -1,14 +1,17 @@
 <?php
-
-ini_set('display_errors', 1);
     require "../php/connection.php"; 
 
-
-    function myFunction(){
-    $query = "UPDATE tbl_product SET Antal = Antal - 1 WHERE ID = 1";
-    $select_hej = mysqli_query($GLOBALS['connection'], $query);
+    function handleStock($product_id, $operator){
+    $query = "UPDATE tbl_product SET Antal = Antal $operator 1 WHERE ID = $product_id";
+    $select = mysqli_query($GLOBALS['connection'], $query);
 };
-
-    myFunction();
     
-?>
+    handleStock($_POST['id'], $_POST['operator']);
+
+    header("Location: http://joelmaneskold.wieg17.se/hairSpray/php/welcome_admin.php");
+
+die();
+
+
+ 
+?> 
