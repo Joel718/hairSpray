@@ -41,12 +41,23 @@ echo "<br/><br/>";
 $query = "SELECT * FROM tbl_product WHERE Antal IS NOT NULL";
 $select_stock = mysqli_query($connect, $query);
 
-while ($row = mysqli_fetch_assoc($select_stock)){
-  echo '<br/>' .$row['Antal'];
 
-  echo '<a href="../functions/updateStock.php"><button id="up">+</button></a>';
-  echo '<a href="../functions/updateStock.php"><button id="down">-</button></a></form>';
+while ($row = mysqli_fetch_assoc($select_stock))
+{
+    echo '<br/><form method="POST" action="../functions/updateStock.php">' .$row['Antal'];
+    echo '<input type="submit" name="' . $row['id'] . '" value="+">';
+    echo '<input type="submit" name="' . $row['id'] . '" value="-">';
+    echo '</form>';
 }
+
+echo '<a href="../functions/updateStock.php"><button id="up">+</button></a>';
+echo '<a href="../functions/updateStock.php"><button id="down">-</button></a>';
+
+
+// while ($row = mysqli_fetch_assoc($select_stock)){
+//   echo '<br/>' .$row['Antal'];
+
+
 
 
 ?>
