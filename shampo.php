@@ -91,11 +91,13 @@ if(isset($_GET["action"]))
         </div>
 
         <br />  
-          <div id="navbar" style="font-size: 20px; text-align: center;">
-          <button><a href="vax.php">Vax</a></button>
-          <button><a href="shampo.php">Shampo</a></button>
-          <button><a href="index.php">hairSpray</a></button>
-      </div>
+        <div id="navbar" style="font-size: 20px; text-align: center;">
+        <button><a href="vax.php">Vax</a></button>
+        <button><a href="shampo.php">Shampo</a></button>
+        <button><a href="hairspray.php">hairSpray</a></button>
+        <button><a href="index.php">Alla produkter</a></button>
+        
+    </div>
 
 <body>
     <br />

@@ -89,10 +89,13 @@ if(isset($_GET["action"]))
         </div>
        
         <br />  
-        <div id="navbar" style="font-size: 20px; text-align: center;">
+
+    <div id="navbar" style="font-size: 20px; text-align: center;">
         <button><a href="vax.php">Vax</a></button>
         <button><a href="shampo.php">Shampo</a></button>
-        <button><a href="index.php">hairSpray</a></button>
+        <button><a href="hairspray.php">hairSpray</a></button>
+        <button><a href="index.php">Alla produkter</a></button>
+        
     </div>
 
 <body>
@@ -106,9 +109,7 @@ if(isset($_GET["action"]))
 
         <?php  
                 $query = "SELECT * 
-                FROM tbl_product 
-                WHERE prodname 
-                LIKE 'h%' 
+                FROM utan_frakt 
                 ORDER BY id ASC";    
                 $result = mysqli_query($connect, $query);  
                 if(mysqli_num_rows($result) > 0)  
