@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 //Om inlogg på sida stämmer loggar in
 if(isset($_POST['loggIn'])){
 require 'admin_connect.php';
