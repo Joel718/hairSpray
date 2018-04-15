@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 <?php   
 
-=======
-<?php 
->>>>>>> 98a4f1558ccbb43e88829b0aa916577a7ae562d8
 session_start();
     $dbsettings = parse_ini_file('./database.ini');
     $servername = $dbsettings['address'];
@@ -69,31 +65,20 @@ if(isset($_GET["action"]))
 
 ?>  
   
-
-
 <!DOCTYPE html>  
 <html>  
      <head>  
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, shrink-to-fit=no"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://use.fontawesome.com/23e3abc5b7.js"></script>
         <link rel="stylesheet" href="./sections/head_foot.css">
-        <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
      </head>  
 
      <body>  
-<<<<<<< HEAD
   
-=======
 
-<?php include './sections/header.php';?>
-
->>>>>>> 98a4f1558ccbb43e88829b0aa916577a7ae562d8
         <div id="prenumeration">
             <form action="nyhetsbrev.php" method="post">
                      <h4>Registrera dig för nyhetsbrev</h4>
