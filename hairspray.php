@@ -96,7 +96,7 @@ if(isset($_GET["action"]))
         <button><a href="index.php">Alla produkter</a></button>
         
     </div>
-<body>
+<body style="background-color: orange;">
     <br />
 
 
