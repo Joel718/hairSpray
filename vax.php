@@ -18,7 +18,6 @@ if(isset($_POST["add_to_cart"]))
 {  
      if(isset($_SESSION["shopping_cart"]))  
      {  
-        $sql = "UPDATE tbl_product SET Antal = wAntal - num_purchased WHERE id = 1";
           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
           if(!in_array($_GET["id"], $item_array_id))  
           {  
@@ -74,8 +73,6 @@ if(isset($_GET["action"]))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, shrink-to-fit=no"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-        <script src="https://use.fontawesome.com/23e3abc5b7.js"></script>
-        <link rel="stylesheet" href="./sections/head_foot.css">
         </head>  
 
      <body>  
@@ -93,7 +90,7 @@ if(isset($_GET["action"]))
         <div id="navbar" style="font-size: 20px; text-align: center;">
         <button><a href="vax.php">Vax</a></button>
         <button><a href="shampo.php">Shampo</a></button>
-        <button><a href="hairspray.php">hairSpray</a></button>
+        <button><a href="hairspray.php">Hairspray</a></button>
         <button><a href="index.php">Alla produkter</a></button>
         
     </div>
@@ -104,7 +101,7 @@ if(isset($_GET["action"]))
 
 
     <div class="container" style="width:700px;">
-        <h3 align="center">hairSpray</h3><br />
+        <h3 align="center">Hairspray</h3><br />
 
         
 
@@ -164,7 +161,7 @@ if(isset($_GET["action"]))
                               <td><?php echo $values["item_quantity"]; ?></td>  
                               <td>$ <?php echo $values["item_price"]; ?></td>  
                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
-                              <td><a href="vax.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                              <td><a href="vax.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Radera</span></a></td>  
                          </tr>  
                          <?php  
                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
@@ -173,7 +170,7 @@ if(isset($_GET["action"]))
                          <tr>  
                               <td colspan="3" align="right">Total</td>  
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                              <td></td>  
+                              <td><a href="vax.php">Köp</a></td>  
                          </tr>     
 
                         <?php  
@@ -203,6 +200,8 @@ if(isset($_GET["action"]))
                           </div>  
                      </form>  
 
+                                
+                    
             
                     <?php 
 
