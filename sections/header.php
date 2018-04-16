@@ -4,27 +4,27 @@
 
 <!-- Meta Tags -->
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
-<link rel="stylesheet" href="../style/head_foot.css">
+<link rel="stylesheet" href="./style/head_foot.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- Meta Tags -->
 
 <!-- Navbars -->
 
     <nav class="navbar navbar1">
-    <a class="navbar-brand" href="#">Hair Spray</a>
+    <a class="navbar-brand" href="./index.php">HairSpray.se</a>
         <div class="container-sm">
             <button type="button" class="btn btn-default">Inlogg</button>  
             <button type="button" class="btn btn-default">Skapa Konto</button>
-            <button type="button" class="btn btn-default kundvagn"><img src="../bilder/shopping_kart.png"></button>
+            <button type="button" class="btn btn-default kundvagn"><img src="./bilder/shopping_kart.png"></button>
             <!-- <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="username">
             <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password"> -->
         </div>
     </nav>
 
     <nav class="navbar linkproducts nav-justified navbar2">
-      <a class="nav-item nav-link" href="../shampo.php">Shampoo</a>
-      <a class="nav-item nav-link" href="../hairspray.php">Hairspray</a>
-      <a class="nav-item nav-link" href="../vax.php">Vax</a>
+      <a class="nav-item nav-link" href="./shampo.php">Shampoo</a>
+      <a class="nav-item nav-link" href="./hairspray.php">Hairspray</a>
+      <a class="nav-item nav-link" href="./vax.php">Vax</a>
     </nav>
 
 

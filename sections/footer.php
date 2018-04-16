@@ -26,23 +26,7 @@
             <!--Second column-->
             <div class="col-md-6">
                 <h5 class="text-uppercase">Created by</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">Joel</a>
-                    </li>
-                    <li>
-                        <a href="#!">Emil</a>
-                    </li>
-                    <li>
-                        <a href="#!">Louise</a>
-                    </li>
-                    <li>
-                        <a href="#!">Jonatan</a>
-                    </li>
-                    <li>
-                        <a href="#!">Christian</a>
-                    </li>
-                </ul>
+                    <p>Joel, Emil, Louise, Jonatan & Christian</p>
             </div>
             <!--/.Second column-->
         </div>

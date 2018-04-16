@@ -63,59 +63,28 @@ if(isset($_GET["action"]))
      }  
 }  
 
-?>  
+?> 
+
+<?php include './sections/header.php';?>
   
 <!DOCTYPE html>  
 <html>  
-     <head>  
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, shrink-to-fit=no"> 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-     </head>  
+    <head>  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no"> 
+    <link rel="stylesheet" href="./style/style.css">
+    </head>    
 
-     <style>
-
-            form {
-                border: 4px solid #f1f1f1;
-            }
-
-            #prenumeration {
-                text-align: center;
-                padding: 20px;
-            }
-
-        </style>
-
-     <body>  
-  
-
-        <div id="prenumeration">
-            <form action="nyhetsbrev.php" method="post">
-                     <h4>Registrera dig för nyhetsbrev</h4>
-                Email : <input type="text" name="email">
-                        <br/>
-                        <input type="submit" value="Registrera">
-            </form>
-        </div>
-       
-        <br />  
-        <div id="navbar" style="font-size: 20px; text-align: center;">
-        <button><a href="vax.php">Vax</a></button>
-        <button><a href="shampo.php">Shampo</a></button>
-        <button><a href="hairspray.php">Hairspray</a></button>
-        <button><a href="index.php">Alla produkter</a></button>
-        
-    </div>
-<body>
-    <br />
+    <body>
 
 
-    <div class="container" style="width:700px;">
-        <h1 align="center">Hairspray</h1><br />
+
+    <div class="container">
 
         
 
+                <div class="row">
         <?php  
                 $query = "SELECT * 
                 FROM tbl_product 
@@ -130,7 +99,7 @@ if(isset($_GET["action"]))
             ?>  
 
 
-                <div class="col-md-4">  
+                <div class="col-xs-12 col-md-4"> 
                      <form method="post" action="hairspray.php?action=add&id=<?php echo $row["id"]; ?>">  
                           <div style="border:1px solid #333; background-color:white; border-radius:5px; padding:16px;" align="center">  
                               <img src="./bilder/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
@@ -148,10 +117,10 @@ if(isset($_GET["action"]))
                     }  
                }  
                ?>
-        <div style="clear:both"></div>
-        <br />
+        </div>  
+
         <h3>Kundkorg</h3>
-        <div class="table-responsive">
+        <div class="table-responsive table-cart">
             <table class="table table-bordered">
                 <tr>
                     <th width="40%">Namn</th>
@@ -218,9 +187,18 @@ if(isset($_GET["action"]))
 
                     ?>
                     </table>  
-               </div>  
+               </div>
+               
+        <div id="prenumeration">
+            <form action="nyhetsbrev.php" method="post">
+                     <h4>Registrera dig för nyhetsbrev</h4>
+                Email : <input type="text" name="email">
+                        <br/>
+                        <input type="submit" value="Registrera">
+            </form>
+        </div>  
           </div>  
-          <br />  
-        
+
+<?php include './sections/footer.php';?>        
      </body>  
 </html>
