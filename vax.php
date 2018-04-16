@@ -90,7 +90,7 @@ if(isset($_GET["action"]))
         <div id="navbar" style="font-size: 20px; text-align: center;">
         <button><a href="vax.php">Vax</a></button>
         <button><a href="shampo.php">Shampo</a></button>
-        <button><a href="hairspray.php">hairSpray</a></button>
+        <button><a href="hairspray.php">Hairspray</a></button>
         <button><a href="index.php">Alla produkter</a></button>
         
     </div>
@@ -101,7 +101,7 @@ if(isset($_GET["action"]))
 
 
     <div class="container" style="width:700px;">
-        <h3 align="center">hairSpray</h3><br />
+        <h3 align="center">Hairspray</h3><br />
 
         
 
@@ -159,8 +159,8 @@ if(isset($_GET["action"]))
                          <tr>  
                               <td><?php echo $values["item_name"]; ?></td>  
                               <td><?php echo $values["item_quantity"]; ?></td>  
-                              <td>Kr <?php echo $values["item_price"]; ?></td>  
-                              <td>Kr <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
+                              <td>$ <?php echo $values["item_price"]; ?></td>  
+                              <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
                               <td><a href="vax.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Radera</span></a></td>  
                          </tr>  
                          <?php  
@@ -169,8 +169,8 @@ if(isset($_GET["action"]))
                          ?>  
                          <tr>  
                               <td colspan="3" align="right">Total</td>  
-                              <td align="right">Kr <?php echo number_format($total, 2); ?></td>  
-                              <td></td>  
+                              <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+                              <td><a href="vax.php">Köp</a></td>  
                          </tr>     
 
                         <?php  
@@ -200,6 +200,8 @@ if(isset($_GET["action"]))
                           </div>  
                      </form>  
 
+                                
+                    
             
                     <?php 
 

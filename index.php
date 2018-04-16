@@ -92,7 +92,7 @@ if(isset($_GET["action"]))
         <div id="navbar" style="font-size: 20px; text-align: center;">
         <button><a href="vax.php">Vax</a></button>
         <button><a href="shampo.php">Shampo</a></button>
-        <button><a href="hairspray.php">hairSpray</a></button>
+        <button><a href="hairspray.php">Hairspray</a></button>
         <button><a href="index.php">Alla produkter</a></button>
         
     </div>
@@ -102,7 +102,7 @@ if(isset($_GET["action"]))
 
 
     <div class="container" style="width:700px;">
-        <h3 align="center">hairSpray</h3><br />
+        <h3 align="center">Hairspray</h3><br />
 
         
 
@@ -123,7 +123,7 @@ if(isset($_GET["action"]))
                           <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
                               <img src="./bilder/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
                                <h4 class="text-info"><?php echo $row["prodname"]; ?></h4>  
-                               <h4 class="text-danger">Kr <?php echo $row["price"]; ?></h4>  
+                               <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
                                <input type="hidden" name="quantity" class="form-control" value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["prodname"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
@@ -168,8 +168,8 @@ if(isset($_GET["action"]))
                          ?>  
                          <tr>  
                               <td colspan="3" align="right">Total</td>  
-                              <td align="right">Kr <?php echo number_format($total, 2); ?></td>  
-                              <td></td>  
+                              <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+                              <td><a href="index.php">Köp</a></td>  
                          </tr>     
 
                         <?php  

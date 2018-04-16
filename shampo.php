@@ -91,7 +91,7 @@ if(isset($_GET["action"]))
         <div id="navbar" style="font-size: 20px; text-align: center;">
         <button><a href="vax.php">Vax</a></button>
         <button><a href="shampo.php">Shampo</a></button>
-        <button><a href="hairspray.php">hairSpray</a></button>
+        <button><a href="hairspray.php">Hairspray</a></button>
         <button><a href="index.php">Alla produkter</a></button>
         
     </div>
@@ -101,7 +101,7 @@ if(isset($_GET["action"]))
 
 
     <div class="container" style="width:700px;">
-        <h3 align="center">hairSpray</h3><br />
+        <h3 align="center">Hairspray</h3><br />
 
         
 
@@ -170,7 +170,7 @@ if(isset($_GET["action"]))
                          <tr>  
                               <td colspan="3" align="right">Total</td>  
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                              <td></td>  
+                              <td><a href="shampo.php">Köp</a></td>  
                          </tr>     
 
                         <?php  
