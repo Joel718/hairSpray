@@ -2,26 +2,53 @@
 
 ?>
 
-<!-- Footer -->
-<footer id="myFooter">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10">
-                <h2 class="logo"><h1>Om oss</h1></h2>
-                <div class="row-2">
-                <p>Lorem ipsum lorem </p>
-                </div>
-            </div>
+<!-- Meta Tags -->
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+<link rel="stylesheet" href="../style/head_foot.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Meta Tags -->
 
-            <div class="col-sm-2">
-                <div class="social-networks">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                </div>
-                <a href="#"><button type="button" class="btn btn-default">Kontakta oss</button></a>
+
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Hairspray.se</h5>
+                <p>Lorem ipsum lorem ipsum lorem ipsum omg</p>
             </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Created by</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Joel</a>
+                    </li>
+                    <li>
+                        <a href="#!">Emil</a>
+                    </li>
+                    <li>
+                        <a href="#!">Louise</a>
+                    </li>
+                    <li>
+                        <a href="#!">Jonatan</a>
+                    </li>
+                    <li>
+                        <a href="#!">Christian</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Second column-->
         </div>
     </div>
+    <!--/.Footer Links-->
+
 </footer>
-<!-- Footer -->
+<!--/.Footer-->
+                      
