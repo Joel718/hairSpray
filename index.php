@@ -98,7 +98,7 @@ if(isset($_GET["action"]))
         
     </div>
 
-<body style="background-color: orange;">
+<body>
     <br />
 
 
