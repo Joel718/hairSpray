@@ -74,6 +74,7 @@ if(isset($_GET["action"]))
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <script src="https://use.fontawesome.com/23e3abc5b7.js"></script>
         <link rel="stylesheet" href="./sections/head_foot.css">
+        <link rel="stylesheet" href="style.css">
      </head>  
 
      <body>  
