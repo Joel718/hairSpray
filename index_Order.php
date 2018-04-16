@@ -77,7 +77,7 @@ if($_POST['action'] == "Place Order") {
     //Hämtar array $item_array där valda produkter ligger
     $item_arrayEncoded = json_encode($item_array);
 
-    $sql = "INSERT INTO Order (id, Prodname, Price, Prodname) VALUES ('$item_array')";
+    $sql = "INSERT INTO Order (id, prodname, price, antal) VALUES ('$item_array')";
 }
 ?>  
   
