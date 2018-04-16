@@ -18,7 +18,6 @@ if(isset($_POST["add_to_cart"]))
 {  
      if(isset($_SESSION["shopping_cart"]))  
      {  
-        $sql = "UPDATE tbl_product SET Antal = wAntal - num_purchased WHERE id = 1";
           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
           if(!in_array($_GET["id"], $item_array_id))  
           {  
@@ -74,8 +73,6 @@ if(isset($_GET["action"]))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, shrink-to-fit=no"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://use.fontawesome.com/23e3abc5b7.js"></script>
-    <link rel="stylesheet" href="./sections/head_foot.css">
     </head>  
      
     <body>  
