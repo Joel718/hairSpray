@@ -17,7 +17,6 @@
 
 </body>
 
-
 <?php
 echo 'Hej '.$_SESSION['username'];
 echo "<br/>";
