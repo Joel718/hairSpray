@@ -37,7 +37,7 @@ Lösning:
 #6 Skapa en adminsida.
 
 Lösning: 
-
+Via databasen ansluta till admin. Läser av om inlogg stämmer med $result. If sats kollar admin stämmer. welcome_admin.php när lyckats logga in.  
 
 #7 Inga lösenord får sparas i klartext i databasen.
 
