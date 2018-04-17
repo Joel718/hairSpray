@@ -5,11 +5,13 @@ body {
 }
 .box {
     display: grid;
-    
-
 }
 .box2 {
     margin-left:3.2em;
+}
+
+#adminlink {
+    text-decoration: none;
 
 }
 

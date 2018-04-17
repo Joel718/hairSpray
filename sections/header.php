@@ -13,7 +13,7 @@
     <nav class="navbar navbar1">
     <a class="navbar-brand" href="./index.php">HairSpray.se</a>
         <div class="container-sm">
-            <button type="button" class="btn btn-default">Inlogg</button>  
+            <a id="adminlink" href="./php/admin.php"><button type="button" class="btn btn-default">Admin loggin</button></a> 
             <button type="button" class="btn btn-default kundvagn"><img src="./bilder/shopping_kart.png"></button>
             <!-- <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="username">
             <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password"> -->

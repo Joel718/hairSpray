@@ -77,8 +77,3 @@ footer {
    -webkit-flex: 1 0 auto;
    min-height: 200px;
 }
-
-#myFooter{
-   flex: 0 0 auto;
-   -webkit-flex: 0 0 auto;
-}
