@@ -1,9 +1,20 @@
+
+<?php 
+
+    unset($_SESSION["shopping_cart"][$keys]);
+    echo '<script>alert("Tack för ditt köp")</script>';
+    echo '<script>window.location="index.php"</script>';
+   
+?>
+
 <?php
     include "./index.php";
 ?>
 
 <?php
     
+
+
 
 foreach($_SESSION["shopping_cart"] as $keys => $item){
 
@@ -18,6 +29,9 @@ foreach($_SESSION["shopping_cart"] as $keys => $item){
 
         // print_r($id);
         // print_r($result);
+
+        
 }
+
 
 ?>

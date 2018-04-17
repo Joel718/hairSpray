@@ -1,7 +1,8 @@
 <?php   
 
-
 session_start();
+
+
     $dbsettings = parse_ini_file('./database.ini');
     $servername = $dbsettings['address'];
     $username = $dbsettings['username'];
@@ -149,40 +150,14 @@ if(isset($_GET["action"]))
                               
                               
                          ?>  
-<<<<<<< HEAD
-             
-                    <?php 
-                         $id = $_SESSION['shopping_cart'][0]['item_id'];
-                            $name = $_SESSION['shopping_cart'][0]['item_name'];
-                            $price = $_SESSION['shopping_cart'][0]['item_price'];
-                            $qty = $_SESSION['shopping_cart'][0]['item_quantity'];
-
-                            $sql_insert = "INSERT INTO `Order` (id, prodname, price, antal) 
-                                VALUES ($id, '$name', $price, $qty);";
-                                $result = mysqli_query($connect, $sql_insert);
-
-                                print_r($id);
-                                print_r($result);
-                            
-                                      
-                    ?>
-
-                         <tr>  
-    
-                              <td colspan="3" align="right">Total</td>  
-                              <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                              <td><a href="kundvagn.php">Köp</a></td>  
-                    
-                         </tr>     
-=======
                             <tr>  
                             
                             <td colspan="3" align="right">Total</td>  
                             <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                            <td><a href="kundvagn.php">Köp</a></td>  
+                            <td><a href="./functions/kundvagn.php">Köp</a></td>  
+                           
 
                             </tr>   
->>>>>>> 6c4cebf394a30abd94e04fe2cc1e5f93a273d34a
 
                         <?php  
                         }  
@@ -239,11 +214,9 @@ if(isset($_GET["action"]))
                         <br/>
                         <input type="submit" value="Registrera">
             </form>
-            </div>
-        </div>  
+        </div>
+          </div>  
  
-
-
 <?php include './sections/footer.php';?>
      </body>  
 </html>
