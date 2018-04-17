@@ -145,10 +145,29 @@ if(isset($_GET["action"]))
                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                               }  
                          ?>  
+             
+                    <?php 
+                         $id = $_SESSION['shopping_cart'][0]['item_id'];
+                            $name = $_SESSION['shopping_cart'][0]['item_name'];
+                            $price = $_SESSION['shopping_cart'][0]['item_price'];
+                            $qty = $_SESSION['shopping_cart'][0]['item_quantity'];
+
+                            $sql_insert = "INSERT INTO `Order` (id, prodname, price, antal) 
+                                VALUES ($id, '$name', $price, $qty);";
+                                $result = mysqli_query($connect, $sql_insert);
+
+                                print_r($id);
+                                print_r($result);
+                            
+                                      
+                    ?>
+
                          <tr>  
+    
                               <td colspan="3" align="right">Total</td>  
                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                              <td><a href="index.php">Köp</a></td>  
+                              <td><a href="kundvagn.php">Köp</a></td>  
+                    
                          </tr>     
 
                         <?php  
@@ -197,9 +216,11 @@ if(isset($_GET["action"]))
                         <br/>
                         <input type="submit" value="Registrera">
             </form>
-        </div>
-          </div>  
+            </div>
+        </div>  
  
+
+
 <?php include './sections/footer.php';?>
      </body>  
 </html>
