@@ -79,7 +79,7 @@ Lösning:
 #15 Admin ska kunna se en lista över personer som vill ha nyhetsbrev och deras epost adresser.
 
 Lösning: 
-
+Hämtar alla kolumner i tabelen Person. Hämtar sen ut queryn i databasen mot $select_person. Gör en while loop som skriver ut respektive row i $select_Person. Slutligen echo respektive kolumn på egen rad. 
 
 #16 Besökare ska kunna välja ett av flera fraktalternativ.
 
