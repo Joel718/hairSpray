@@ -1,7 +1,5 @@
 
 <?php 
-
-    unset($_SESSION["shopping_cart"][$keys]);
     echo '<script>alert("Tack för ditt köp")</script>';
     echo '<script>window.location="index.php"</script>';
    
