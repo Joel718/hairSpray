@@ -19,7 +19,7 @@ Lösning:
 
 #3 Beskriva företagsidé i text.
 
-Lösning:
+Lösning: Vi har utvecklat en företagsidé som vi har beskrivit professionellt i en textfil vid namn HairSpray.txt. 
 
 
 #4 All data som programmet uttnyttjar ska vara sparat i MySQL databas (produkter, beställningar, konton).
@@ -37,7 +37,7 @@ Lösning:
 #6 Skapa en adminsida.
 
 Lösning: 
-Via databasen ansluta till admin. Läser av om inlogg stämmer med $result. If sats kollar admin stämmer. welcome_admin.php när lyckats logga in.  
+
 
 #7 Inga lösenord får sparas i klartext i databasen.
 
