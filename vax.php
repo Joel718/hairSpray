@@ -99,7 +99,7 @@ if(isset($_GET["action"]))
 
 
                 <div class="col-xs-12 col-md-4"> 
-                     <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">  
+                     <form method="post" action="vax.php?action=add&id=<?php echo $row["id"]; ?>">  
                           <div style="border:1px solid #333; background-color:white; border-radius:5px; padding:16px;" align="center">  
                               <img src="./bilder/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
                                <h4 class="text-info"><?php echo $row["prodname"]; ?></h4>  
