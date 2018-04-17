@@ -61,6 +61,22 @@ while ($row = mysqli_fetch_assoc($select_stock)){
 
 ?>
 
+<?php
+$query = "SELECT * 
+FROM `Order`";
+$select_order = mysqli_query($connect, $query);
+  echo '<div class="box">';
+while($row = mysqli_fetch_assoc($select_order)) { 
+
+  echo '<ul><li>' . $post_ID = $row['id'] . ' ' . $post_name = $row['prodname'] . '' . $post_price = $row['price'] . '' . $post_qty = $row['antal'] . ' </ul></li>';
+  echo "<br/>";
+  
+  
+}
+echo '</div>';
+?>
+
+
 </html>
 
 

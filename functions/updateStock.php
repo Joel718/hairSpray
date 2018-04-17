@@ -12,8 +12,6 @@
 
     header("Location: http://joelmaneskold.wieg17.se/hairSpray/php/welcome_admin.php");
     die();
-
-
  
 ?> 
 

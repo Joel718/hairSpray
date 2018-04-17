@@ -133,6 +133,7 @@ if(isset($_GET["action"]))
                               $total = 0;  
                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
                               {  
+                              
                          ?>  
                          <tr>  
                               <td><?php echo $values["item_name"]; ?></td>  
@@ -144,15 +145,22 @@ if(isset($_GET["action"]))
                          <?php  
                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                               }  
+
+                              
+                              
                          ?>  
-                         <tr>  
-                              <td colspan="3" align="right">Total</td>  
-                              <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                              <td><a href="index.php">Köp</a></td>  
-                         </tr>     
+                            <tr>  
+                            
+                            <td colspan="3" align="right">Total</td>  
+                            <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+                            <td><a href="kundvagn.php">Köp</a></td>  
+
+                            </tr>   
 
                         <?php  
                         }  
+
+
                         ?>
 
                             <?php 
@@ -183,9 +191,16 @@ if(isset($_GET["action"]))
             
                     <?php 
 
+                       
                     }
+                    
+                 
 
                     ?>
+                    
+                        
+
+                  
                     </table>  
                     
                </div>  
