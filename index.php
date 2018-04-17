@@ -1,6 +1,8 @@
 <?php   
 
 session_start();
+
+
     $dbsettings = parse_ini_file('./database.ini');
     $servername = $dbsettings['address'];
     $username = $dbsettings['username'];
@@ -153,6 +155,7 @@ if(isset($_GET["action"]))
                             <td colspan="3" align="right">Total</td>  
                             <td align="right">$ <?php echo number_format($total, 2); ?></td>  
                             <td><a href="kundvagn.php">Köp</a></td>  
+                           
 
                             </tr>   
 
